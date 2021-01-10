@@ -9,12 +9,12 @@
     ./bootstrap.nix # setups up basic Nix/shell environment
 
     # Personal modules
-    # ./modules/security/pam.nix # pending upstream, PR #228
+    ./modules/security/pam.nix # pending upstream, PR #228
     ./modules/homebrew.nix # pending upstream, PR #262
 
     # Other nix-darwin configuration
     ./homebrew.nix
-    # ./defaults.nix # options for macOS defaults (uses a bunch of patched modules)
+    ./defaults.nix # options for macOS defaults (uses a bunch of patched modules)
   ];
 
 

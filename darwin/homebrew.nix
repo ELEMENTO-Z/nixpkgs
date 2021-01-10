@@ -21,6 +21,7 @@
   ];
 
   homebrew.brews = [
+    "node"
     "yabai"
     "skhd"  
     "sbt"

@@ -15,12 +15,12 @@
   };
 
   # Firewall
-  system.defaults.alf = {
-    globalstate = 1;
-    allowsignedenabled = 1;
-    allowdownloadsignedenabled = 1;
-    stealthenabled = 1;
-  };
+  # system.defaults.alf = {
+  #   globalstate = 1;
+  #   allowsignedenabled = 1;
+  #   allowdownloadsignedenabled = 1;
+  #   stealthenabled = 1;
+  # };
 
   # Dock and Mission Control
   system.defaults.dock = {
@@ -31,19 +31,19 @@
   };
 
   # Login and lock screen
-  system.defaults.loginwindow = {
-    GuestEnabled = false;
-    DisableConsoleAccess = true;
-  };
+  # system.defaults.loginwindow = {
+  #   GuestEnabled = false;
+  #   DisableConsoleAccess = true;
+  # };
 
   # Spaces
   system.defaults.spaces.spans-displays = false;
 
   # Trackpad
-  system.defaults.trackpad = {
-    Clicking = false;
-    TrackpadRightClick = true;
-  };
+  # system.defaults.trackpad = {
+  #   Clicking = false;
+  #   TrackpadRightClick = true;
+  # };
 
   # Finder
   system.defaults.finder = {
