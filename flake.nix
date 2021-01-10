@@ -1,5 +1,5 @@
 {
-  description = "Malo's Nix System Configs";
+  description = "Pritam's Nix System Configs";
 
   inputs = {
     # Channels
@@ -23,24 +23,24 @@
     fish-plugin-humanize-duration.flake = false;
 
     # Vim plugins
-    galaxyline-nvim.url = "github:glepnir/galaxyline.nvim";
-    galaxyline-nvim.flake = false;
-    gitsigns-nvim.url = "github:lewis6991/gitsigns.nvim";
-    gitsigns-nvim.flake = false;
-    lush-nvim.url = "github:rktjmp/lush.nvim";
-    lush-nvim.flake = false;
-    moses-lua.url = "github:Yonaba/Moses";
-    moses-lua.flake = false;
-    telescope-nvim.url = "github:nvim-telescope/telescope.nvim";
-    telescope-nvim.flake = false;
-    vim-haskell-module-name.url = "github:chkno/vim-haskell-module-name";
-    vim-haskell-module-name.flake = false;
+    # galaxyline-nvim.url = "github:glepnir/galaxyline.nvim";
+    # galaxyline-nvim.flake = false;
+    # gitsigns-nvim.url = "github:lewis6991/gitsigns.nvim";
+    # gitsigns-nvim.flake = false;
+    # lush-nvim.url = "github:rktjmp/lush.nvim";
+    # lush-nvim.flake = false;
+    # moses-lua.url = "github:Yonaba/Moses";
+    # moses-lua.flake = false;
+    # telescope-nvim.url = "github:nvim-telescope/telescope.nvim";
+    # telescope-nvim.flake = false;
+    # vim-haskell-module-name.url = "github:chkno/vim-haskell-module-name";
+    # vim-haskell-module-name.flake = false;
 
     # Other sources
     comma.url = "github:Shopify/comma";
     comma.flake = false;
-    neovim.url = "github:neovim/neovim?dir=contrib";
-    neovim.inputs.nixpkgs.follows = "nixpkgs";
+    # neovim.url = "github:neovim/neovim?dir=contrib";
+    # neovim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, ... }@inputs:
@@ -77,7 +77,7 @@
         modules = [ ./darwin/bootstrap.nix ];
       };
 
-      MaloBookPro = inputs.darwin.lib.darwinSystem {
+      MacBookPro = inputs.darwin.lib.darwinSystem {
         modules = [
           # Common configuration
           (overlaysModule "x86_64-darwin")
@@ -85,9 +85,9 @@
 
           # Host specific configuration
           {
-            users.users.malo.home = "/Users/malo";
-            networking.computerName = "Malo’s 💻";
-            networking.hostName = "MaloBookPro";
+            users.users.pritamkadam.home = "/Users/pritamkadam";
+            networking.computerName = "pritamkadam";
+            networking.hostName = "MacBook-Pro";
             networking.knownNetworkServices = [
               "Wi-Fi"
               "USB 10/100/1000 LAN"
@@ -95,46 +95,11 @@
           }
           inputs.home-manager.darwinModules.home-manager {
             home-manager.useGlobalPkgs = true;
-            home-manager.users.malo = import ./home-manager/configuration.nix;
-          }
-        ];
-      };
-
-      githubCI = inputs.darwin.lib.darwinSystem {
-        modules = [
-          # Common configuration
-          (overlaysModule "x86_64-darwin")
-          ./darwin/configuration.nix
-
-          # Host specific configuration
-          ({lib, ...}: {
-            users.users.runner.home = "/Users/runner";
-            homebrew.enable = lib.mkForce false;
-          })
-          inputs.home-manager.darwinModules.home-manager {
-            home-manager.useGlobalPkgs = true;
-            home-manager.users.runner = import ./home-manager/configuration.nix;
+            home-manager.users.pritamkadam = import ./home-manager/configuration.nix;
           }
         ];
       };
 
     };
-
-    homeConfigurations.vm = inputs.home-manager.lib.homeManagerConfiguration {
-      system = "x86_64-linux";
-      homeDirectory = "/home/malo";
-      username = "malo";
-      configuration = {
-        imports = [
-          (overlaysModule "x86_64-linux")
-          ./home-manager/configuration.nix
-        ];
-        nixpkgs.config = import ./config.nix;
-      };
-    };
-
-    vm = self.homeConfigurations.vm.activationPackage;
-
   };
-
 }

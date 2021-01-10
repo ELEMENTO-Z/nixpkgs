@@ -9,13 +9,13 @@
     ./bootstrap.nix # setups up basic Nix/shell environment
 
     # Personal modules
-    ./modules/security/pam.nix # pending upstream, PR #228
+    # ./modules/security/pam.nix # pending upstream, PR #228
     ./modules/homebrew.nix # pending upstream, PR #262
 
     # Other nix-darwin configuration
     ./homebrew.nix
-    ./defaults.nix # options for macOS defaults (uses a bunch of patched modules)
-  ] ++ lib.filter lib.pathExists [ ./private.nix ];
+    # ./defaults.nix # options for macOS defaults (uses a bunch of patched modules)
+  ];
 
 
   ########################
@@ -30,7 +30,7 @@
 
   # GUI apps (home-manager currently has issues adding them to ~/Applications)
   environment.systemPackages = with pkgs; [
-    kitty
+    # kitty
     terminal-notifier
   ];
   programs.nix-index.enable = true;
@@ -44,12 +44,12 @@
   ];
 
   # Keyboard
-  system.keyboard.enableKeyMapping = true;
-  system.keyboard.remapCapsLockToEscape = true;
+  # system.keyboard.enableKeyMapping = true;
+  # system.keyboard.remapCapsLockToEscape = true;
 
   # Add ability to used TouchID for sudo authentication (custom module)
-  security.pam.enableSudoTouchIdAuth = true;
-  system.activationScripts.extraActivation.text = config.system.activationScripts.pam.text;
+  # security.pam.enableSudoTouchIdAuth = true;
+  # system.activationScripts.extraActivation.text = config.system.activationScripts.pam.text;
 
   # Lorri daemon
   services.lorri.enable = true;

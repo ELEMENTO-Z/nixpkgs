@@ -68,53 +68,6 @@
         "type": "github"
       }
     },
-    "flake-utils": {
-      "locked": {
-        "lastModified": 1610051610,
-        "narHash": "sha256-U9rPz/usA1/Aohhk7Cmc2gBrEEKRzcW4nwPWMPwja4Y=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "3982c9903e93927c2164caa727cd3f6a0e6d14cc",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
-    "galaxyline-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1610004959,
-        "narHash": "sha256-PC2bGgMB0oveNilkNbn1PMCM0Lgi/c3m9kqvkIjc7Yw=",
-        "owner": "glepnir",
-        "repo": "galaxyline.nvim",
-        "rev": "789a036b1612e4aa0acde059c76d245ba09e82b9",
-        "type": "github"
-      },
-      "original": {
-        "owner": "glepnir",
-        "repo": "galaxyline.nvim",
-        "type": "github"
-      }
-    },
-    "gitsigns-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1609978350,
-        "narHash": "sha256-2W8cEfMaeEVvHMEgorqBddRTLXWyyLe5/pc3utW9ztI=",
-        "owner": "lewis6991",
-        "repo": "gitsigns.nvim",
-        "rev": "a6accdd04d483be91ba36438e5fa847c8dbf605c",
-        "type": "github"
-      },
-      "original": {
-        "owner": "lewis6991",
-        "repo": "gitsigns.nvim",
-        "type": "github"
-      }
-    },
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -132,61 +85,6 @@
       "original": {
         "owner": "nix-community",
         "repo": "home-manager",
-        "type": "github"
-      }
-    },
-    "lush-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1606827001,
-        "narHash": "sha256-2/Bh0Wfl+5M2Vm4Fk0vb7DRo0d6PqBElPjjOxgsAzeg=",
-        "owner": "rktjmp",
-        "repo": "lush.nvim",
-        "rev": "6c0db268288e1c50aa17cc817e6e2b5cc63c6099",
-        "type": "github"
-      },
-      "original": {
-        "owner": "rktjmp",
-        "repo": "lush.nvim",
-        "type": "github"
-      }
-    },
-    "moses-lua": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1573371081,
-        "narHash": "sha256-n/ca2MxiZPk6FZHvQGS6TTl1AZx6ZdDmR7viJFgttik=",
-        "owner": "Yonaba",
-        "repo": "Moses",
-        "rev": "6fe8d76d50a22d85fe064aaa80390b72381befed",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Yonaba",
-        "repo": "Moses",
-        "type": "github"
-      }
-    },
-    "neovim": {
-      "inputs": {
-        "flake-utils": "flake-utils",
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "dir": "contrib",
-        "lastModified": 1609964264,
-        "narHash": "sha256-JuRK3Aci/HsKzAsj8tQm2d/Rq2v+gqInrwfYG3pv/uc=",
-        "owner": "neovim",
-        "repo": "neovim",
-        "rev": "fe1ebea33914df137fdded98872fe38fa8470384",
-        "type": "github"
-      },
-      "original": {
-        "dir": "contrib",
-        "owner": "neovim",
-        "repo": "neovim",
         "type": "github"
       }
     },
@@ -260,50 +158,11 @@
         "darwin": "darwin",
         "fish-plugin-done": "fish-plugin-done",
         "fish-plugin-humanize-duration": "fish-plugin-humanize-duration",
-        "galaxyline-nvim": "galaxyline-nvim",
-        "gitsigns-nvim": "gitsigns-nvim",
         "home-manager": "home-manager",
-        "lush-nvim": "lush-nvim",
-        "moses-lua": "moses-lua",
-        "neovim": "neovim",
         "nixos-stable": "nixos-stable",
         "nixpkgs": "nixpkgs",
         "nixpkgs-master": "nixpkgs-master",
-        "nixpkgs-stable-darwin": "nixpkgs-stable-darwin",
-        "telescope-nvim": "telescope-nvim",
-        "vim-haskell-module-name": "vim-haskell-module-name"
-      }
-    },
-    "telescope-nvim": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1610074845,
-        "narHash": "sha256-+EZvaVtlheH6Ekq4stIxmmPT/bSCwkmQYFMeFOQqHlM=",
-        "owner": "nvim-telescope",
-        "repo": "telescope.nvim",
-        "rev": "77d6a74d1ea3d272e6e898860a71a61b184540ff",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nvim-telescope",
-        "repo": "telescope.nvim",
-        "type": "github"
-      }
-    },
-    "vim-haskell-module-name": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1579488530,
-        "narHash": "sha256-UVoZqZU3EnkEiHWfR2yg8sHzh6KwA5ix8S19/4ZwXEk=",
-        "owner": "chkno",
-        "repo": "vim-haskell-module-name",
-        "rev": "f9f8e9f83a30b8f805b8fbc0079163e8193b289b",
-        "type": "github"
-      },
-      "original": {
-        "owner": "chkno",
-        "repo": "vim-haskell-module-name",
-        "type": "github"
+        "nixpkgs-stable-darwin": "nixpkgs-stable-darwin"
       }
     }
   },

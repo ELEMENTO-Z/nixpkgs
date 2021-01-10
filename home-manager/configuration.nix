@@ -4,9 +4,9 @@
   # Import config broken out into files
   imports = [
     ./git.nix
-    ./neovim.nix
-    ./shells.nix
-  ] ++ lib.filter lib.pathExists [ ./private.nix ];
+    # ./neovim.nix
+    ./fish/default.nix
+  ];
 
 
   ###########################
@@ -17,83 +17,113 @@
   # https://github.com/sharkdp/bat
   programs.bat.enable = true;
   programs.bat.config = {
-    style = "plain";
+    theme = "Dracula";
   };
 
   # Direnv, load and unload environment variables depending on the current directory
   # https://direnv.net
   programs.direnv.enable = true;
+  programs.direnv.enableFishIntegration = true;
+
+  programs.fzf.enable = true;
+  programs.fzf.enableFishIntegration = true;
+
+  programs.gpg.enable = true;
 
   # Kitty terminal
   # Configuration options defined in overlays: `../overlays/kitty-configs.nix`
-  programs.kitty.enable = true;
-  programs.kitty.settings = pkgs.my-kitty-config // pkgs.my-kitty-light-config;
-  xdg.configFile."kitty/macos-launch-services-cmdline".text = "--listen-on unix:/tmp/mykitty";
+  # programs.kitty.enable = true;
+  # programs.kitty.settings = pkgs.my-kitty-config // pkgs.my-kitty-light-config;
+  # xdg.configFile."kitty/macos-launch-services-cmdline".text = "--listen-on unix:/tmp/mykitty";
 
   # Htop
   programs.htop.enable = true;
   programs.htop.showProgramPath = true;
+  programs.htop.sortDescending = true;
+  programs.htop.sortKey = "PERCENT_CPU";
+  
+  programs.jq.enable = true;
+  programs.ssh.enable = true;
 
   # Zoxide, a faster way to navigate the filesystem
   # https://github.com/ajeetdsouza/zoxide
   programs.zoxide.enable = true;
-
+  
+  home.sessionVariables = {
+      PGDATA = "/usr/local/var/postgres";
+      JAVA_HOME = "$(/usr/libexec/java_home -v 11)";
+      EDITOR = "nvim";
+    };
 
   #######################
   # Additional packages #
   #######################
 
   home.packages = with pkgs; [
-    # Some basics
-    bandwhich # display current network utilization by process
-    browsh # in terminal browser
-    bottom # fancy version of `top` with ASCII graphs
-    coreutils
-    cloc # source code line counter
-    curl
-    du-dust # fancy version of `du`
-    exa # fancy version of `ls`
-    fd # fancy version of `find`
-    htop # fancy version of `top`
-    hyperfine # benchmarking tool
-    mosh # wrapper for `ssh` that better and not dropping connections
-    parallel # runs commands in parallel
-    procs # fancy version of `ps`
-    ripgrep # better version of grep
-    nodePackages.speed-test # nice speed-test tool
-    thefuck # suggests fixes to commands that exit with a non-zero status
-    tealdeer # rust implementation of `tldr`
-    unrar # extract RAR archives
+     any-nix-shell  # fish support for nix shell
+    coursier
+    colorls
+    pstree
+    bash # /bin/bash
+    bat # cat replacement written in Rust
+    cachix # Nix build cache
+    curl # An old classic
+    direnv # Per-directory environment variables
+    fzf # Fuzzy finder
+    fd
+    ranger
+    gnupg # gpg
+    pinentry_mac # Necessary for GPG
+    gradle
+    htop # Resource monitoring
+    httpie # Like curl but more user friendly
+    jq # JSON parsing for the CLI
+    jsonnet # Easy config language
+    lorri # Easy Nix shell
+    ngrok # Expose local HTTP stuff publicly
+    niv # Nix dependency management
+    nix-serve
+    nixos-generators
+    pre-commit # Pre-commit CI hook tool
+    # python3 # Have you upgraded yet???
+    ripgrep # grep replacement written in Rust
+    tokei # Handy tool to see lines of code by language
+    tree # Should be included in macOS but it's not
+    vagrant # Virtualization made easy
+    # vscode # My fav text editor if I'm being honest
+    slack
     wget
-    xz # extract XZ archives
+    yarn # Node.js package manager
+    youtube-dl #Download videos
+    tldr
+    ncdu
+    exa
+    graphviz # Graph visualization tools
+    ffmpeg
+    rename
+    mpv # Command line video player
+    ripgrep-all # ripgrep, but also search in PDFs, E-Books, Office documents, zip, tar.gz, and more
+    
+    zathura # A highly customizable and functional PDF viewer
+    mupdf # Lightweight PDF, XPS, and E-book viewer and toolkit written in portable C
+    ueberzug
+    silver-searcher
+    universal-ctags
+    lazygit
+    lazydocker
 
-    # General dev stuff
-    myenvs.agda
-    myenvs.haskell
-    myenvs.idris
-    myenvs.python
-    nodePackages.bash-language-server
-    ccls
-    google-cloud-sdk
-    jq
-    mypkgs.tickgit
-    nodejs
-    nodePackages.typescript
-    rnix-lsp
-    s3cmd
-    watchman
+    shellcheck
+    
+    neofetch # A fast, highly customizable system info script
+    dive # A tool for exploring each layer in a docker image
+    gotop # A terminal based graphical activity monitor inspired by gtop and vtop
 
-    # Useful nix related tools
-    cachix # adding/managing alternative binary caches hosted by Cachix
-    comma # run software from without installing it
-    lorri # improve `nix-shell` experience in combination with `direnv`
-    niv # easy dependency management for nix projects
-    nodePackages.node2nix
+    nixpkgs-fmt
+    cacert
 
-    abduco
-  ] ++ lib.optionals stdenv.isDarwin [
-    m-cli # useful macOS cli commands
-    # mypkgs.prefmanager # tool for working with macOS defaults
+    # gitAndTools.git
+    gitAndTools.delta
+    gitAndTools.gh
   ];
 
   # This value determines the Home Manager release that your configuration is compatible with. This
