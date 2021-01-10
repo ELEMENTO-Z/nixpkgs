@@ -15,48 +15,58 @@
     "homebrew/cask-versions"
     "homebrew/core"
     "homebrew/services"
+    "koekeishiya/formulae"
+    "coursier/formulas"
+  ];
+
+  homebrew.brews = [
+    "yabai"
+    "skhd"  
+    "sbt"
+    "kotlin"
+    # "steam"
+    "coursier"
+    "luajit" # brew install --HEAD luajit
+    "neovim" # brew install --HEAD neovim
   ];
 
   homebrew.casks = [
-    # "atom"
-    # "amethyst"
-    # "arq"
-    # "balenaetcher"
-    # "displaycal"
     "firefox"
     "google-chrome"
     "google-drive-file-stream"
     "gpg-suite"
     "hammerspoon"
-    # "hey"
-    # "honer"
-    # "i1profiler"
-    # "keybase"
-    # "launchbar"
-    # "linear-linear"
-    # "protonvpn"
     "signal"
-    # "skype"
-    "steam"
-    # "superhuman"
-    # "tor-browser"
-    # "transmission"
-    # "transmit"
-    # "typinator"
     "virtualbox"
     "virtualbox-extension-pack"
     # "visual-studio-code-insiders"
     "vlc"
-    # "yubico-authenticator"
-    # "yubico-yubikey-manager"
-    # "yubico-yubikey-personalization-gui"
+    "brave-browser-beta"
+    "alfred"
+    "caffeine"
+    "docker"
+    "evernote"
+    "flycut"
+    "font-hack-nerd-font"
+    "font-jetbrains-mono"
+    "fork"
+    "google-chat"
+    "iterm2"
+    "jetbrains-toolbox"
+    "karabiner-elements"
+    "spotify"
+    "redis"
+    "telegram"
+    "whatsapp"
+    "zoom"
+    "zoomus"
   ];
 
   homebrew.masApps = {
     # "1Blocker" = 1107421413;
-    "1Password" = 1333542190;
+    # "1Password" = 1333542190;
     # DaisyDisk = 411643860;
-    "Dark Mode for Safari" = 1397180934;
+    # "Dark Mode for Safari" = 1397180934;
     # Deliveries = 924726344;
     # Fantastical = 975937182;
     Keynote = 409183694;
@@ -72,7 +82,7 @@
     # "Things 3" = 904280696;
     # "Type Fu" = 509818877;
     # Ulysses = 1225570693;
-    "WiFi Explorer" = 494803304;
+    # "WiFi Explorer" = 494803304;
     Xcode = 497799835;
   };
 }
