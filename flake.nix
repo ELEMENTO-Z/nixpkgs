@@ -39,8 +39,8 @@
     # Other sources
     comma.url = "github:Shopify/comma";
     comma.flake = false;
-    # neovim.url = "github:neovim/neovim?dir=contrib";
-    # neovim.inputs.nixpkgs.follows = "nixpkgs";
+    neovim.url = "github:neovim/neovim?dir=contrib";
+    neovim.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs = { self, ... }@inputs:
@@ -59,12 +59,12 @@
           mySources = {
             fish-plugin-done = fish-plugin-done;
             fish-plugin-humanize-duration = fish-plugin-humanize-duration;
-            galaxyline-nvim = galaxyline-nvim;
-            gitsigns-nvim = gitsigns-nvim;
-            lush-nvim = lush-nvim;
-            moses-lua = moses-lua;
-            telescope-nvim = telescope-nvim;
-            vim-haskell-module-name = vim-haskell-module-name;
+            # galaxyline-nvim = galaxyline-nvim;
+            # gitsigns-nvim = gitsigns-nvim;
+            # lush-nvim = lush-nvim;
+            # moses-lua = moses-lua;
+            # telescope-nvim = telescope-nvim;
+            # vim-haskell-module-name = vim-haskell-module-name;
           };
         })
       ] ++ map import ((import ./lsnix.nix) ./overlays);

@@ -120,7 +120,8 @@
 
     nixpkgs-fmt
     cacert
-
+    comma # run software from without installing it
+    
     # gitAndTools.git
     gitAndTools.delta
     gitAndTools.gh

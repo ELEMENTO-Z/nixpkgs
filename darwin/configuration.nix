@@ -48,8 +48,8 @@
   # system.keyboard.remapCapsLockToEscape = true;
 
   # Add ability to used TouchID for sudo authentication (custom module)
-  # security.pam.enableSudoTouchIdAuth = true;
-  # system.activationScripts.extraActivation.text = config.system.activationScripts.pam.text;
+  security.pam.enableSudoTouchIdAuth = true;
+  system.activationScripts.extraActivation.text = config.system.activationScripts.pam.text;
 
   # Lorri daemon
   services.lorri.enable = true;

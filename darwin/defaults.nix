@@ -27,7 +27,7 @@
     autohide = true;
     expose-group-by-app = false;
     mru-spaces = false;
-    tilesize = 128;
+    tilesize = 80;
   };
 
   # Login and lock screen
