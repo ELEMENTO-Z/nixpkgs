@@ -15,6 +15,7 @@
     "homebrew/cask-versions"
     "homebrew/core"
     "homebrew/services"
+    "AdoptOpenJDK/openjdk"
     "koekeishiya/formulae"
     "coursier/formulas"
   ];
@@ -31,6 +32,7 @@
   ];
 
   homebrew.casks = [
+    "adoptopenjdk11"
     "firefox"
     "google-chrome"
     "google-drive-file-stream"
