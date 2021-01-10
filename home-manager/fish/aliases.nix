@@ -18,7 +18,7 @@
   hms = "home-manager switch";
   garbage = "nix-collect-garbage -d && docker image prune --force"; # Nix garbage collection
   hmu = "nix-channel --update && hms";
-  drb = "darwin-rebuild build --flake ~/.config/nixpkgs/#darwinConfigurations.bootstrap.system";
+  drb = "nix build ~/.config/nixpkgs/#darwinConfigurations.bootstrap.system";
   drs = "darwin-rebuild switch --flake ~/.config/nixpkgs/#MacBookPro";
   flakeup = "nix flake update --recreate-lock-file ~/.config/nixpkgs/";
 
