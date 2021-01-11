@@ -5,6 +5,7 @@
   imports = [
     ./git.nix
     # ./neovim.nix
+    ./tmux.nix
     ./fish/default.nix
   ];
 
