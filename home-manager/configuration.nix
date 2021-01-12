@@ -122,6 +122,7 @@
     nixpkgs-fmt
     cacert
     comma # run software from without installing it
+    redis
     
     # gitAndTools.git
     gitAndTools.delta
