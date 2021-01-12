@@ -7,8 +7,8 @@
     AppleMetricUnits = 1;
     AppleShowScrollBars = "Automatic";
     AppleTemperatureUnit = "Celsius";
-    InitialKeyRepeat = 15;
-    KeyRepeat = 2;
+    InitialKeyRepeat = 10;
+    KeyRepeat = 1;
     NSAutomaticCapitalizationEnabled = false;
     NSAutomaticPeriodSubstitutionEnabled = false;
     _HIHideMenuBar = true;
@@ -27,7 +27,7 @@
     autohide = true;
     expose-group-by-app = false;
     mru-spaces = false;
-    tilesize = 80;
+    tilesize = 50;
   };
 
   # Login and lock screen
@@ -38,12 +38,15 @@
 
   # Spaces
   system.defaults.spaces.spans-displays = false;
+  
+  # Finder
+  system.defaults.finder.CreateDesktop = false;
 
   # Trackpad
-  # system.defaults.trackpad = {
-  #   Clicking = false;
-  #   TrackpadRightClick = true;
-  # };
+  system.defaults.trackpad = {
+    Clicking = true;
+    TrackpadRightClick = true;
+  };
 
   # Finder
   system.defaults.finder = {
