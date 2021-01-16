@@ -61,7 +61,10 @@
   #######################
 
   home.packages = with pkgs; [
-     any-nix-shell  # fish support for nix shell
+    go
+    minikube
+    kotlin
+    any-nix-shell  # fish support for nix shell
     coursier
     colorls
     pstree

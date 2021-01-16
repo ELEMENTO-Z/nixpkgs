@@ -22,7 +22,7 @@
 
   homebrew.brews = [
     "coursier"
-    "kotlin"
+    # "kotlin"
     "luajit" # brew install --HEAD luajit
     "neovim" # brew install --HEAD neovim
     "node"
@@ -30,6 +30,11 @@
     # "steam"
     "skhd"  
     "yabai"
+
+    # Kubernetes
+    "kubernetes-cli" # Already comes with docker
+    "helm"
+    "kubectx"
   ];
 
   homebrew.casks = [

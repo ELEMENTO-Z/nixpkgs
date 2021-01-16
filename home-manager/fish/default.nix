@@ -10,6 +10,9 @@ let
     set -g theme_git_default_branches master main
     set -g theme_display_git_master_branch yes
     set -g theme_color_scheme dracula
+    set -g theme_display_k8s_context yes
+    set -g theme_display_nix yes
+    set -g theme_display_docker_machine yes
   '';
 
   # Set all shell aliases programatically
