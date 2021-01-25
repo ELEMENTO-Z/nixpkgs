@@ -44,11 +44,11 @@
   ];
 
   # Make Fish the default shell
-  programs.fish.enable = true;
+  # programs.fish.enable = true;
   # Needed to address bug where $PATH is not properly set for fish:
   # https://github.com/LnL7/nix-darwin/issues/122
   programs.fish.interactiveShellInit = ''
-    set -pg fish_function_path ${pkgs.fish-foreign-env}/share/fish-foreign-env/functions
+    set -pg fish_function_path ${pkgs.fishPlugins.foreign-env}/share/fish/vendor_functions.d
     fenv source ${config.system.build.setEnvironment}
   '';
   # Needed to ensure Fish is set as the default shell:

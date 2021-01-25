@@ -59,6 +59,7 @@
     "karabiner-elements"
     "notion"
     # "redis"
+    "slack"
     "signal"
     "spotify"
     "telegram"
@@ -86,7 +87,7 @@
     # Patterns = 429449079;
     # Pixelmator = 407963104;
     # "Pixelmator Pro" = 1289583905;
-    Slack = 803453959;
+    # Slack = 803453959;
     # SiteSucker = 442168834;
     # "Things 3" = 904280696;
     # "Type Fu" = 509818877;

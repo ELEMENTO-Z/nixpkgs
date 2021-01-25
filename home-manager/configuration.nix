@@ -95,7 +95,7 @@
     tree # Should be included in macOS but it's not
     vagrant # Virtualization made easy
     # vscode # My fav text editor if I'm being honest
-    slack
+    # slack
     wget
     yarn # Node.js package manager
     youtube-dl #Download videos
