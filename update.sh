@@ -6,6 +6,3 @@ nix build .#darwinConfigurations.MacBookPro.system
 
 ./result/sw/bin/darwin-rebuild switch --flake .#MacBookPro
 
-darwin-rebuild switch --flake .#MacBookPro
-
-
